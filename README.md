@@ -1,9 +1,5 @@
 # api-server-nestjs
 
-## Description
-
-nestjs api server
-
 ## Installation
 
 ```bash
@@ -35,4 +31,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
