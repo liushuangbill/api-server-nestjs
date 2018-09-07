@@ -1,5 +1,9 @@
 # api-server-nestjs
 
+## 模块
+
+music: qq 音乐接口代理
+
 ## Installation
 
 ```bash
