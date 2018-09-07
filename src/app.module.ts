@@ -5,7 +5,6 @@ import {
   Global,
   HttpModule
 } from "@nestjs/common"
-import * as bodyParser from "body-parser"
 
 import { ConsoleLog } from "common/middleware/logger.middleware"
 import { limiter } from "common/middleware/limt.middleware"
@@ -21,6 +20,6 @@ import { HttpWrapService } from "common/service/http-wrap.service"
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(ConsoleLog(), limiter, bodyParser.json()).forRoutes("/")
+    consumer.apply(ConsoleLog(), limiter).forRoutes("/")
   }
 }
