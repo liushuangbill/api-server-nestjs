@@ -5,6 +5,7 @@ import { MusicService } from "./music.service"
 export class MusicController {
   constructor(private musicService: MusicService) {}
 
+  // 歌手列表
   @Get("/getDiscList")
   getDiscList(@Req() req) {
     const query = req.query
@@ -20,6 +21,7 @@ export class MusicController {
     return resData$
   }
 
+  // 歌曲播放地址
   @Post("/purlUrl")
   getSongsUrl(@Req() req) {
     const body = req.body
