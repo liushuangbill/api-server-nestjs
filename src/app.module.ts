@@ -3,12 +3,12 @@ import {
   NestModule,
   MiddlewareConsumer,
   Global,
-  HttpModule,
+  HttpModule
 } from "@nestjs/common"
 import * as bodyParser from "body-parser"
 
 import { ConsoleLog } from "common/middleware/logger.middleware"
-import { limiter } from "common/utils/limt.utils"
+import { limiter } from "common/middleware/limt.middleware"
 import { MusicModules } from "music/music.modules"
 import { HttpWrapService } from "common/service/http-wrap.service"
 
@@ -17,7 +17,7 @@ import { HttpWrapService } from "common/service/http-wrap.service"
   imports: [HttpModule, MusicModules],
   controllers: [],
   providers: [HttpWrapService],
-  exports: [HttpWrapService],
+  exports: [HttpWrapService]
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

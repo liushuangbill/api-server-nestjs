@@ -1,5 +1,5 @@
 import * as Limit from 'express-rate-limit'
-import { ResDto } from '../dto/res.dto';
+import { ResDto } from 'common/dto/res.dto';
 
 // 限流
 export const limiter = new Limit({
