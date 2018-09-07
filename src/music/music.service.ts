@@ -11,6 +11,11 @@ export class MusicService {
     host: "c.y.qq.com"
   }
 
+  qqHeaders2 = {
+    referer: "https://u.y.qq.com/",
+    host: "u.y.qq.com"
+  }
+
   constructor(private httpWrap: HttpWrapService) {}
 
   // 获取歌单列表
@@ -40,8 +45,8 @@ export class MusicService {
 
   // 获取歌曲url
   getSongsUrl(body: object): Observable<ResDto> {
-    const url = "http://ustbhuangyi.com/music/api/getPurlUrl"
-    return this.httpWrap.postReq(url, body).pipe(
+    const url = "https://u.y.qq.com/cgi-bin/musicu.fcg"
+    return this.httpWrap.postReq(url, body, this.qqHeaders2).pipe(
       map(resData => {
         const mid = resData["url_mid"]
         return new ResDto({
