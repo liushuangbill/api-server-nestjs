@@ -25,7 +25,7 @@ export class MusicController {
   @Get("/lyric")
   getLyric(@Query() query): Observable<ResDto> {
     const resData$ = this.musicService.getLyric(query)
-    throw resData$
+    return resData$
   }
 
   // 歌曲播放地址
