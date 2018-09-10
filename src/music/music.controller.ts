@@ -1,5 +1,14 @@
-import { Controller, Get, Req, Post, Query, Body } from "@nestjs/common"
+import {
+  Controller,
+  Get,
+  Post,
+  Query,
+  Body,
+  ForbiddenException
+} from "@nestjs/common"
 import { MusicService } from "./music.service"
+import { Observable } from "rxjs"
+import { ResDto } from "common/dto/res.dto"
 
 @Controller("music")
 export class MusicController {
@@ -7,21 +16,21 @@ export class MusicController {
 
   // 歌手列表
   @Get("/getDiscList")
-  getDiscList(@Query() query) {
+  getDiscList(@Query() query): Observable<ResDto> {
     const resData$ = this.musicService.getDiscList(query)
     return resData$
   }
 
   // 歌词
   @Get("/lyric")
-  getLyric(@Query() query) {
+  getLyric(@Query() query): Observable<ResDto> {
     const resData$ = this.musicService.getLyric(query)
-    return resData$
+    throw new ForbiddenException("dddf")
   }
 
   // 歌曲播放地址
   @Post("/purlUrl")
-  getSongsUrl(@Body() body) {
+  getSongsUrl(@Body() body): Observable<ResDto> {
     const resData$ = this.musicService.getSongsUrl(body)
     return resData$
   }
