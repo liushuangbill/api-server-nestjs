@@ -36,7 +36,7 @@ export class HttpWrapService {
   // 错误处理
   private handleError() {
     return (error: Error): Observable<ResDto> => {
-      return of(new ResDto({ code: -1, message: error.message }))
+      return of(new ResDto({ code: 502, message: error.message }))
     }
   }
 }

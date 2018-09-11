@@ -17,21 +17,18 @@ export class MusicController {
   // 歌手列表
   @Get("/getDiscList")
   getDiscList(@Query() query): Observable<ResDto> {
-    const resData$ = this.musicService.getDiscList(query)
-    return resData$
+    return this.musicService.getDiscList(query)
   }
 
   // 歌词
   @Get("/lyric")
   getLyric(@Query() query): Observable<ResDto> {
-    const resData$ = this.musicService.getLyric(query)
-    return resData$
+    return this.musicService.getLyric(query)
   }
 
   // 歌曲播放地址
   @Post("/purlUrl")
   getSongsUrl(@Body() body): Observable<ResDto> {
-    const resData$ = this.musicService.getSongsUrl(body)
-    return resData$
+    return this.musicService.getSongsUrl(body)
   }
 }
